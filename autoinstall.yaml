@@ -1,10 +1,5 @@
 # cloud-config
-autoinstall:
-  version: 1
-  # Corrigindo o formato da lista para evitar o ValidationError
-  interactive-sections:
-    - storage
-    
+autoinstall:    
   locale: en_US.UTF-8
   keyboard:
     layout: br
@@ -21,9 +16,9 @@ autoinstall:
     network:
       version: 2
       wifis:
-        wifi_auto:
+        id0:
           match:
-            name: "wl*"
+            name: "wl*" # Procura qualquer interface que comece com 'wl'
           access-points:
             "LUCIANO_MAIA":
               password: "Morg@na14303"
