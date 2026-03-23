@@ -21,7 +21,9 @@ autoinstall:
     network:
       version: 2
       wifis:
-        wlp0s20f3:
+        id0:
+          match:
+            name: "wl*" # Procura qualquer interface que comece com 'wl'
           access-points:
             "LUCIANO_MAIA":
               password: "Morg@na14303"
