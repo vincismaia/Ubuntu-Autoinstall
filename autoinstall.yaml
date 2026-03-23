@@ -1,6 +1,6 @@
 #cloud-config
 autoinstall:
-    version: 1
+    interactive-sections:
     identity:
         realname: 'Vinicius Maia'
         hostname: ubuntu
