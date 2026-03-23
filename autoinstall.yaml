@@ -1,0 +1,35 @@
+# cloud-config
+autoinstall:
+  version: 1
+  # Esta linha faz o instalador parar na tela de discos
+  interactive-sections:
+    - storage
+    
+  locale: en_US.UTF-8
+  keyboard:
+    layout: br
+    model: pc105
+    variant: thinkpad
+
+  identity:
+    realname: Vinicius Maia
+    username: vinicius
+    hostname: ubuntu
+    password: "$y$j9T$.0mgJGlpkhBR.ULVvZL0/1$cHmUdfk/CXFsoCn7LpJwegUTw2Flu5/m9Zx4S79ab/B"
+
+  network:
+    network:
+      version: 2
+      wifis:
+        wlp0s20f3:
+          access-points:
+            "LUCIANO_MAIA":
+              password: "Morg@na14303"
+          dhcp4: true
+
+  ssh:
+    install-server: true
+    allow-pw: true
+
+  late-commands:
+    - curtin in-target -- apt-get update
