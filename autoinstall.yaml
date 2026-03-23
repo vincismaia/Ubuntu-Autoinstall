@@ -1,7 +1,7 @@
 # cloud-config
 autoinstall:
   version: 1
-  # Esta linha faz o instalador parar na tela de discos
+  # Corrigindo o formato da lista para evitar o ValidationError
   interactive-sections:
     - storage
     
@@ -21,9 +21,9 @@ autoinstall:
     network:
       version: 2
       wifis:
-        id0:
+        wifi_auto:
           match:
-            name: "wl*" # Procura qualquer interface que comece com 'wl'
+            name: "wl*"
           access-points:
             "LUCIANO_MAIA":
               password: "Morg@na14303"
