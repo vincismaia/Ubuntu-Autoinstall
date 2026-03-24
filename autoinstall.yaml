@@ -1,29 +1,22 @@
 #cloud-config
 autoinstall:
-    interactive-sections:
-    identity:
-        realname: 'Vinicius Maia'
-        hostname: ubuntu
-        username: vinicius
-        password: '$y$j9T$cG75EBwKhZwYBbZ7owrbN0$C/DrUfpjXE7qr2uOSkoCmAgZsYMEVOuIGGN/2ItoDs1'
-    locale: en_US.UTF-8
-    keyboard:
-        layout: br
-        model: pc105
-        variant: thinkpad
-    timezone: "America/Sao_Paulo"   
-    packages:
-        - libreoffice
-        - gimp
-        - git
-        - wget
-    snaps:
-        - name: spotify
-          channel: stable
-          classic: false
-    codecs:
-        install: true
-    drivers:
-        install: true
-    updates: all
-    shutdown: reboot
+      version: 1
+      identity:
+          realname: 'Vinicius Maia'
+          hostname: ubuntu
+          username: vinicius
+          password: '$y$j9T$IBOw4/MnECorDB8crvY/O/$N7YMPH20ZZN3ZD8Yk5mEdu5e8y3NB6nBVEfmp99adv8'
+      locale: en_US.UTF-8
+      keyboard:
+          layout: br
+      timezone: "America/Sao_Paulo"
+      packages:
+          - libreoffice
+          - gimp
+          - git
+          - wget
+      codecs: 
+          install: true
+      updates: all 
+      shutdown: reboot
+
