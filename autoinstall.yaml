@@ -18,3 +18,5 @@ autoinstall:
         - curtin in-target -- apt-get update
         - curtin in-target -- apt-get install -y curl git
         - curtin in-target -- git clone https://github.com/vincismaia/gnome_autoconfig.git ~/AutoConfig
+      updates: all 
+      shutdown: reboot
