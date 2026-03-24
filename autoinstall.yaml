@@ -1,0 +1,24 @@
+#cloud-config
+autoinstall:
+      version: 1
+      identity:
+          realname: 'Vinicius Maia'
+          hostname: ubuntu
+          username: vinicius
+          password: '$y$j9T$IBOw4/MnECorDB8crvY/O/$N7YMPH20ZZN3ZD8Yk5mEdu5e8y3NB6nBVEfmp99adv8'
+      locale: en_US.UTF-8
+      keyboard:
+          layout: br
+          model: pc105
+          variant: thinkpad
+      timezone: "America/Sao_Paulo"
+      codecs: 
+      install: true
+
+  # Automação de Pós-Instalação via GitHub
+      late-commands:
+        - curtin in-target -- apt-get update
+        - curtin in-target -- apt-get install -y curl git
+        - curtin in-target -- git clone https://github.com/vincismaia/gnome_autoconfig.git /tmp/AutoConfig
+        - curtin in-target -- chmod +x /tmp/AutoConfig/auto_config.sh
+        - curtin in-target -- /bin/bash /tmp/AutoConfig/auto_config.sh
